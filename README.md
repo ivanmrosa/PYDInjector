@@ -26,18 +26,18 @@ The configuration of the relationship between the types and the objects must be 
 do that is necessary to import the  *DIContainer* from *PyDInjector*. Then is possible to use the methods 
 *DIContainer.AddScoped* and *DIContainer.AddSingleton*.
 
-`
+
     from PyDInjector import DIContainer
     DIContainer.AddScoped(IBody, HumanBody)
     DIContainer.AddScoped(IBodyAction, HumanBodyAction)
     DIContainer.AddScoped(IFoodProvider, FoodProvider)
     DIContainer.AddSingleton(ICooker, Cooker)
-`
+
 The first parameter is the Interface and the second one is the class implementation.
 
 See the utilization below:
 
-`
+
     
     class HumanBody(IBody):    
         @inject #The container will inject a instance of BodyAction to this constursctor
@@ -64,6 +64,7 @@ See the utilization below:
     humanBody : IBody = HumanBody() #no need to pass the parameter here, because the container will provide the dependency       
     humanBody.getHandsQuantity()
     humanBody.eat() #no need to pass the parameter here, because the container will provide the dependency       
-`
+
+
 If you want to get an instance of an object manually, is possible to use the method *DIContainer.GetObject(IType)*.
 
