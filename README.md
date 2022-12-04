@@ -37,10 +37,8 @@ The first parameter is the Interface and the second one is the class implementat
 
 See the utilization below:
 
-
 `
     class HumanBody(IBody):    
-
         @inject #The container will inject a instance of BodyAction to this constursctor
         def __init__(self, actions: IBodyAction) -> None:        
             super().__init__()
