@@ -20,7 +20,7 @@ always that we execute the method *doSomenthing*.
 
 Singleton injection will instantiate the object once and then provide the same instance every time it been requested.
 
-##Configuring the container injector
+## Configuring the container injector
 
 The configuration of the relationship between the types and the objects must be inserted at the begining of the code execution. In order to be able to 
 do that is necessary to import the  *DIContainer* from *PyDInjector*. Then is possible to use the methods 
