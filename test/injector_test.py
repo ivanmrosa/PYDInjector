@@ -1,5 +1,5 @@
 import unittest
-from PyDInjector.PyDInjector import DIContainer
+from PyDInjector import DIContainer
 from PyDInjector.test.data.classes.Cooker import Cooker
 from PyDInjector.test.data.classes.FoodProvider import FoodProvider
 from PyDInjector.test.data.interfaces.IBody import IBody

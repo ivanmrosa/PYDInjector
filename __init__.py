@@ -1,0 +1,1 @@
+from .PyDInjector import DIContainer, inject
