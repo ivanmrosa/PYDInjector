@@ -35,33 +35,34 @@ do that is necessary to import the  *DIContainer* from *PyDInjector*. Then is po
 The first parameter is the Interface and the second one is the class implementation.
 
 See the utilization below:
-`
-class HumanBody(IBody):    
 
-    @inject #The container will inject a instance of BodyAction to this constursctor
-    def __init__(self, actions: IBodyAction) -> None:        
-        super().__init__()
-        self.__actions : IBodyAction = actions
-        self.__identification : str = str(uuid.uuid1())    
-    def move(self) -> str:
-        return self.__actions.move()
-    def jump(self) -> str:
-        return self.__actions.jump()
-    def getLegsQuantity(self) -> int:
-        return 2
-    def getHandsQuantity(self) -> int:
-        return 2
-    def getInstanceIdentification(self) -> str:
-        return self.__identification
-    def getActionIdentification(self) -> str:
-        return self.__actions.getInstanceIdentification()
-    @inject #The container will inject a instance of FoodProvider tho this method. If the configuration was singleton, then will be always the same instance. Otherwise a new instance will be provided at each execution 
-    def eat(self, foodProvider: IFoodProvider) -> str:
-        return self.__actions.eat(food=foodProvider.getFood())
+`
+    class HumanBody(IBody):    
+
+        @inject #The container will inject a instance of BodyAction to this constursctor
+        def __init__(self, actions: IBodyAction) -> None:        
+            super().__init__()
+            self.__actions : IBodyAction = actions
+            self.__identification : str = str(uuid.uuid1())    
+        def move(self) -> str:
+            return self.__actions.move()
+        def jump(self) -> str:
+            return self.__actions.jump()
+        def getLegsQuantity(self) -> int:
+            return 2
+        def getHandsQuantity(self) -> int:
+            return 2
+        def getInstanceIdentification(self) -> str:
+            return self.__identification
+        def getActionIdentification(self) -> str:
+            return self.__actions.getInstanceIdentification()
+        @inject #The container will inject a instance of FoodProvider tho this method. If the configuration was singleton, then will be always the same instance. Otherwise a new instance will be provided at each execution 
+        def eat(self, foodProvider: IFoodProvider) -> str:
+            return self.__actions.eat(food=foodProvider.getFood())
         
-humanBody : IBody = HumanBody() #no need to pass the parameter here, because the container will provide the dependency       
-humanBody.getHandsQuantity()
-humanBody.eat() #no need to pass the parameter here, because the container will provide the dependency       
+    humanBody : IBody = HumanBody() #no need to pass the parameter here, because the container will provide the dependency       
+    humanBody.getHandsQuantity()
+    humanBody.eat() #no need to pass the parameter here, because the container will provide the dependency       
 `
 If you want to get an instance of an object manually, is possible to use the method *DIContainer.GetObject(IType)*.
 
