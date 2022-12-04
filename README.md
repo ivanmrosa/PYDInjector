@@ -26,7 +26,8 @@ The configuration of the relationship between the types and the objects must be 
 do that is necessary to import the  *DIContainer* from *PyDInjector*. Then is possible to use the methods 
 *DIContainer.AddScoped* and *DIContainer.AddSingleton*.
 
-`   from PyDInjector import DIContainer
+`
+    from PyDInjector import DIContainer
     DIContainer.AddScoped(IBody, HumanBody)
     DIContainer.AddScoped(IBodyAction, HumanBodyAction)
     DIContainer.AddScoped(IFoodProvider, FoodProvider)
